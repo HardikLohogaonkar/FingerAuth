@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FingerAuth</string>
+
+    <string name="use_scree"> screen lock</string>
+</resources>
