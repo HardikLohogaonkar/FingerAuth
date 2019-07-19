@@ -20,8 +20,9 @@ Add the following JitPack repository in your build.gradle(Project)
 		}
 	}
 
+Implement BiometricCallback
 
-implement BiometricCallback to your respective Activity/Fragment 
+	public class MainActivity extends AppCompatActivity implements BiometricCallback
 
 
 Add  the following variable to your Activity/Fragment as follows
