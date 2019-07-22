@@ -51,16 +51,42 @@ public class MainActivity extends AppCompatActivity implements BiometricCallback
 
     @Override
     public void onBiometricAuthenticationNotAvailable() {
+        
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            KeyguardManager km = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+
+            if (km.isKeyguardSecure()) {
+                Intent authIntent = km.createConfirmDeviceCredentialIntent(getString(R.string.dialog_title_auth), getString(R.string.dialog_msg_auth));
+                startActivityForResult(authIntent, INTENT_AUTHENTICATE);
+            }
+        }
 
     }
 
     @Override
     public void onBiometricAuthenticationPermissionNotGranted() {
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            KeyguardManager km = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+
+            if (km.isKeyguardSecure()) {
+                Intent authIntent = km.createConfirmDeviceCredentialIntent(getString(R.string.dialog_title_auth), getString(R.string.dialog_msg_auth));
+                startActivityForResult(authIntent, INTENT_AUTHENTICATE);
+            }
+        }
     }
 
     @Override
     public void onBiometricAuthenticationInternalError(String error) {
+        
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            KeyguardManager km = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+
+            if (km.isKeyguardSecure()) {
+                Intent authIntent = km.createConfirmDeviceCredentialIntent(getString(R.string.dialog_title_auth), getString(R.string.dialog_msg_auth));
+                startActivityForResult(authIntent, INTENT_AUTHENTICATE);
+            }
+        }
 
     }
 
