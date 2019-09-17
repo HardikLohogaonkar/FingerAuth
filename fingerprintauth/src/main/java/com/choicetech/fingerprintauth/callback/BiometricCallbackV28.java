@@ -19,7 +19,6 @@ public class BiometricCallbackV28 extends BiometricPrompt.AuthenticationCallback
     @Override
     public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
         super.onAuthenticationSucceeded(result);
-        dismissDialog();
         biometricCallback.onAuthenticationSuccessful();
     }
 
